@@ -116,34 +116,35 @@ $create_category_table = "CREATE TABLE IF NOT EXISTS category (
      ) CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci, ENGINE = InnoDB";
 $db->query( $create_category_table );
 // utility function
-function selectFcn($table,$statement,$condition = " ",$params,$values){
+function selectFcn($table,$statement,$condition = " ",$params = "",$values =""){
      global $db;
      $stmt = $db->prepare("SELECT $statement FROM $table $condition ");
   $condition != " " ? $stmt->bind_param("$params", $values):" ";
  $stmt->execute();
  $res = $stmt->get_result();
- return $res
+ return $res;
 }
-function insertFcn($table,$fields,$questions,$params,$values){
+function insertFcn($table,$fields,$questions,$params = "",$values =""){
      global $db;
 $insertStmt = $db->prepare("INSERT INTO $table ($fields) VALUES ($questions)");
          $insertStmt->bind_param("$params",$values);
          $status =$insertStmt->execute();
-         return $status
+         return $status;
 }
-function deleteFcn($table,$statement,$condition = " ",$params,$values){
+function deleteFcn($table,$condition = " ",$params ="",$values=""){
      global $db;
-     $stmt = $db->prepare("DELETE $statement FROM $table $condition ");
+     $stmt = $db->prepare("DELETE FROM $table $condition ");
  $condition != " " ? $stmt->bind_param("$params", $values):" ";
 $status = $stmt->execute();
- return $status
+ return $status;
 }
-function updateFcn($table,$statement,$condition = " ",$params,$values){
+function updateFcn($table,$statement,$condition = " ",$params ="", $values=""){
      global $db;
      $stmt = $db->prepare("UPDATE $table SET $statement $condition ");
  $condition != " " ? $stmt->bind_param("$params", $values):" ";
 $status = $stmt->execute();
- return $status
+ return $status;
 }
+
 ?>
 

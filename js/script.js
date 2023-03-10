@@ -46,4 +46,33 @@ $(document).ready(function(){
             return false;
         });
     });
+          $("#foodform").on("submit", function (e) {
+            e.preventDefault();
+            $.ajax({
+              type: "POST",
+              url: "./controllers/foodmgt.php",
+              cache: false,
+              contentType: false,
+              processData: false,
+              data: new FormData(this),
+              beforeSend: () => {
+                $(this).find("button").html("Processing...");
+                $(this).find("button").attr("disabled", true);
+              },
+              success: (res) => {
+                $(this).find("button").html("Processing...");
+                $(this).find("button").attr("disabled", false);
+                res = JSON.parse(res);
+                const { status, title, btn, icon, comment } = res;
+                swal(title, comment, {
+                  icon,
+                  buttons: {
+                    confirm: { className: btn },
+                  },
+                });
+                if (res.status == true) this.reset();
+              },
+            });
+            return false;
+          });
 })

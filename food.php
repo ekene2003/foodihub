@@ -16,9 +16,10 @@ require_once("./includes/header.php");
             <div class="order-left">
                 <form action="" class="order-form" id="foodForm">
                     <input type="hidden" name="vendor_id">
+                    <input type="hidden" name="createFood">
                     <div class="form-wrap">
                 <i class="fa fa-address-card"></i>           
-                 <input type="text" id="food_name" placeholder ="Food name">
+                 <input type="text" id="food_name" placeholder ="Food name" name = "foodname">
                     </div>
                      <div class="form-wrap">
                                   <i class="fa fa-money-bill"></i>
@@ -32,9 +33,19 @@ require_once("./includes/header.php");
                                 <i class="fa fa-cutlery"></i>
                    <input type="file" name="image" id="" placeholder="quantity avaliable for sale" required >
                     </div>
-                                        <div class="form-wrap">
-                                <i class="fa fa-cutlery"></i>
-                   <select type="file" name="category_id" id="" placeholder="quantity avaliable for sale" required >
+                    <div class="form-wrap">
+                            <i class="fa fa-cutlery"></i>
+                            <select name="category_id" id="" placeholder="quantity avaliable for sale" required >
+                                    <?php
+                                //  $query ="SELECT category_id,name FROM category";
+                                $category = selectFcn("category","category_id ,name");
+                                while( $row = $category->fetch_assoc()){
+                                    $category_id = $row['category_id'];
+                                    $name= $row['name'];
+                                    echo "<option value ='$category_id'>$name</option>";
+                                }
+                                ?>
+                            </select>
                     </div>
                 <div class="form-wrap">
           <i class="fa fa-comment"></i>

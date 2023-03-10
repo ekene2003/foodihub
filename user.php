@@ -7,7 +7,7 @@ require_once("./includes/nav.php");
 <body>
     <main class="main-body">
     <!-- ORDER SECTION -->
-    <section class="order-section" id="order">
+    <section class="order-section" id="order"></section>
         <div class="section-heading">
             <h4 class="section-title">Get Access to Order Food</h4>
             <p class="section-subtitle">Allow us help you quell that nagging hunger in record time!</p>
