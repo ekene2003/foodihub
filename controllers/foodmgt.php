@@ -13,7 +13,10 @@ if (isset($_POST['createFood'])) {
      $ext = pathinfo ($image, PATHINFO_EXTENSION);
      $valid_extension = ['jpg','jpeg','png'];
      if (in_array($ext,$valid_extension)) {
-          $insertFood = insertFcn($table,"foodname,price,quantity,category_id,description,vendor_id,image","?,?,?,?,?,?,?","sssisis","$foodname,$price,$quantity,$category_id,$description,$vendor_id,$image")
+          // $insertFood = insertFcn($table,"foodname,price,quantity,category_id,description,vendor_id,image","?,?,?,?,?,?,?","sssisis","$foodname,$price,$quantity,$category_id,$description,$vendor_id,$image")
+          $insertQuery = $db->prepare("INSERT INTO $table(foodname,price,quantity,catergory_id,description,vendor_id,image) VALUES (?,?,?,?,?,?,?)");
+          $insertQuery->bind_param("sssisis",$foodname,$price,$quantity,$catergory_id,$description,$vendor_id,$image);
+          $insertFood = $insertQuery->execute();
           if ($insertFood) {
                move_uploaded_file($_FILES['image']['tmp_name'],"$folder/images/foods/$image");
                echo json_encode(['status' => true, 'title' => "Food created sucesssfully", 'comment' => "We now have a new food, thanks to you.", 'icon' => 'success', 'btn' => 'btn btn-success'],true);
