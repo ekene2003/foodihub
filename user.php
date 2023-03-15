@@ -15,13 +15,11 @@ require_once("./includes/nav.php");
         <div class="order-wrap">
             <div class="order-left formContainer">
                 <form  class="order-form accountForm loginForm">
-                    <input type="hidden" name="loginAction">
-                    
+                    <input type="hidden" name="loginAction">    
                     <div class="form-wrap">
                         <i class="fa fa-user"></i>
-                        <input type="text" name="username"placeholder="Your username/email" required>
+                        <input type="text" name="username" placeholder="Your username/email" required>
                     </div>
-                   
                     <div class="form-wrap">
                         <i class="fa fa-lock"></i>
                         <input type="password" name="password" minlength="5" placeholder="Password" required>
@@ -30,7 +28,6 @@ require_once("./includes/nav.php");
                         <i class="fab fa-telegram"></i>
                         <input type="submit" value="Login">
                     </div>
-
                     <p class="section-subtitle formSwap" data-target="signupForm">Don't have an account? Signup</p>
                 </form>
                 <form class="order-form accountForm signupForm" style="display: none;">
