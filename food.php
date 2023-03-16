@@ -23,7 +23,7 @@ require_once("./includes/header.php");
                     </div>
                      <div class="form-wrap">
                                   <i class="fa fa-money-bill"></i>
-                                  <input type="number" step=0.5 name="price" id="price">
+                                  <input type="number" step=0.5 name="price" id="price" placeholder= "price of food">
                     </div>
                             <div class="form-wrap">
                                 <i class="fa fa-shopping-basket"></i>

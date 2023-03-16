@@ -153,7 +153,6 @@ function insertFcn($table,$fields,$questions,$params,...$args){
     $insertQuery->bind_param($params, ...$args);
     $status = $insertQuery->execute();
     return $status;
-         
 }
 
 function updateFcn($table, $statement, $condition = "", $params = "", $values = ""){

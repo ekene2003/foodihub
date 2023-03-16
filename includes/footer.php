@@ -1,4 +1,4 @@
-   <footer class="site-footer">
+<footer class="site-footer">
         <nav class="foot-nav">
             <ul class="foot-links">
                 <h3 class="foot-title">Quick Links</h3>
@@ -24,19 +24,20 @@
             <ul class="foot-links">
                 <h3 class="foot-title">Reach Out To Us</h3>
                 <li><a href="mailto:chi.glozzy@gmail.com"><i class="fa fa-envelope"></i> Send a Mail</a></li>
-                <li><a href="tel08036517621"><i class="fa fa-phone"></i> Dail Us Up</a></li>
+                <li><a href="tel:08036517621"><i class="fa fa-phone"></i> Dail Us Up</a></li>
                 <li><a href="http://www.niit.com" target="_blank" rel="noopener noreferrer"><i class="fa fa-globe"></i> Our Developer</a></li>
                 <li><a href="#" target="_self" rel="noopener noreferrer"><i class="fa fa-balance-scale"></i> Privacy Policy</a></li>
             </ul>
         </nav>
-        <small class="foot-end">Copyright &copy; FoodiHub <?php date("y");?> | All rights reserved</small>
+        <small class="foot-end">Copyright &copy; FoodiHub <?php echo date("Y"); ?> | All rights reserved</small>
         <script>
-            $(".nav-link").each(function(){
-                let page = location.pathname.split("/")[2],text = this.textContent.toLowerCase(),href=$(this).attr("href");
-                if(page=="" && text == "home")$(this).addClass("active");
-                else if(page == href.substring(2)) $(this).addClass("active");
-            })
+            // $(document).ready(function(){
+                $(".nav-link").each(function(){
+                    let page = location.pathname.split("/")[2], text = this.textContent.toLowerCase(), href = $(this).attr("href");
+                    if(page == "" && href == "./") $(this).addClass("active");
+                    else if(page == href.substring(2)) $(this).addClass("active");
+                })
+            // })
         </script>
     </footer>
     <script src="./js/all.min.js"></script>
-    <script src="./js/script.js"></script>

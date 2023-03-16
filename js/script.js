@@ -4,7 +4,6 @@
 //    navIcon.classList.toggle('open');
 //     topNav.classList.toggle('show');
 // });
-
 $(document).ready(function(){
     $(".formSwap").each(function(){
         $(this).on("click",function(){
@@ -46,7 +45,7 @@ $(document).ready(function(){
             return false;
         });
     });
-          $("#foodform").on("submit", function (e) {
+          $("#foodForm").on("submit", function (e) {
             e.preventDefault();
             $.ajax({
               type: "POST",

@@ -34,8 +34,6 @@
          echo json_encode(['status' => false, 'title' => 'Invalid Username/Password', 'comment' => 'We do not have a record of this details', 'icon' => 'error', 'btn' => 'btn btn-error'],true);
       }
       }
-
-
       if(isset($_POST['signupAction'])){
       // var_dump($_POST);
       // var_dump($_FILES);
