@@ -424,7 +424,6 @@ require_once("./includes/header.php");
     </section>
     </main>
     <?php require_once('./includes/footer.php');?>
- 
     <script>
         let catBtns = document.querySelectorAll('.category-btn');
         let dishCards = document.querySelectorAll('.dish-card');

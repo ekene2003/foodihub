@@ -63,20 +63,16 @@ $db->query($create_vendors_table);
 
 $create_foods_table = "CREATE TABLE IF NOT EXISTS foods (
     food_id INT(255) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    
     foodname VARCHAR(50) NOT NULL,
     price DECIMAL(7,2) NOT NULL,
     quantity VARCHAR(7) NOT NULL,
     description VARCHAR(250) NOT NULL,
     image VARCHAR(50) NOT NULL,
     vendor_id INT(255) UNSIGNED NOT NULL,
-    
     category_id TINYINT(2) DEFAULT 1,
     status TINYINT(2) DEFAULT 1,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    
-    
 ) CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci, ENGINE=InnoDB";
 $db->query($create_foods_table);
 
@@ -131,10 +127,10 @@ $db->query($create_category_table);
 
 
 // utility functions
-function selectFcn($table, $statement, $condition = "", $params ="", $values = ""){
+function selectFcn($table, $statement, $condition = "", $params ="", ...$args){
     global $db;
     $stmt = $db->prepare("SELECT $statement FROM $table $condition");
-    $condition != "" ? $stmt->bind_param("$params", $values) : "";
+    $condition != "" ? $stmt->bind_param("$params", ...$args) : "";
     $stmt->execute();
     $res = $stmt->get_result();
     return $res;

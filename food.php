@@ -1,95 +1,89 @@
 <?php
-require_once("./config/db.php");
-if(!isset($_SESSION['user_id'])) header("location: ./user.php");
-$page_title = "foodihub :: Tasty Food Arena";
-require_once("./includes/header.php"); 
+include_once( './includes/dashhead.php' );
+include_once( './includes/dashnav.php' );
+
 ?>
-<?php require_once("./includes/nav.php")?>
-    <main class="main-body">   
-    <!-- ORDER SECTION -->
-    <section class="order-section" id="order">
-        <div class="section-heading">
-            <h4 class="section-title">Create a Food</h4>
-            <p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis blanditiis, illo commodi accusantium pariatur eveniet.</p>
-        </div>
-        <div class="order-wrap">
-            <div class="order-left">
-                <form action="" class="order-form" id="foodForm">
-                    <input type="hidden" name="vendor_id">
-                    <input type="hidden" name="createFood">
-                    <div class="form-wrap">
-                <i class="fa fa-address-card"></i>           
-                 <input type="text" id="food_name" placeholder ="Food name" name = "foodname">
-                    </div>
-                     <div class="form-wrap">
-                                  <i class="fa fa-money-bill"></i>
-                                  <input type="number" step=0.5 name="price" id="price" placeholder= "price of food">
-                    </div>
-                            <div class="form-wrap">
-                                <i class="fa fa-shopping-basket"></i>
-                   <input type="number" name="quantity" id="quantity" placeholder="quantity avaliable for sale">
-                    </div>
-                                    <div class="form-wrap">
-                                <i class="fa fa-cutlery"></i>
-                   <input type="file" name="image" id="" placeholder="quantity avaliable for sale" required >
-                    </div>
-                    <div class="form-wrap">
-                            <i class="fa fa-cutlery"></i>
-                            <select name="category_id" id="" placeholder="quantity avaliable for sale" required >
-                                    <?php
-                                //  $query ="SELECT category_id,name FROM category";
-                                $category = selectFcn("category","category_id ,name");
-                                while( $row = $category->fetch_assoc()){
-                                    $category_id = $row['category_id'];
-                                    $name= $row['name'];
-                                    echo "<option value ='$category_id'>$name</option>";
-                                }
-                                ?>
-                            </select>
-                    </div>
-                <div class="form-wrap">
-          <i class="fa fa-comment"></i>
-          <textarea name="description" placeholder="Enter a good description of the food" id="" cols="30" rows="3"></textarea>
+<div class = 'container-fluid py-4'>
+   <div class = 'row'>
+     <div class = 'col-12'>
+        <div class = 'card my-4'>
+            <div class = 'card-header p-0 position-relative mt-n4 mx-3 z-index-2'>
+                  <div class = 'bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3'>
+                   <h6 class = 'text-white text-capitalize ps-3'>Foods table</h6>
+</div>
+</div>
+<div class = 'card-body px-0 pb-2'>
+<div class = 'table-responsive p-0'>
+<table class = 'table align-items-center mb-0'>
+<thead>
+<tr>
+<th class = 'text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Food Details</th>
+<th class = 'text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2'>Order Details</th>
+<th class = 'text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Status</th>
+<th class = 'text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Vendor</th>
+<th class = 'text-secondary opacity-7'></th>
+</tr>
+</thead>
+<tbody>
+  <?php
+        $table = 'foods fd JOIN users us ON fd.vendor_id = us.user_id JOIN category ct USING(category_id) JOIN statuses st ON fd.status = st.status_id' ;
+        $global_id = $_SESSION['user_id'];
+        //  query = 'SELECT fd.food_id,fd.foodname,fd.price,fd.quantity,fd.image,us.firstname,us.lastname,ct.name AS food_category, st.name AS food_status FROM foods fd JOIN users us ON fd.vendor_id = us.user_id JOIN category ct USING(category_id) JOIN status st ON fd.status = st.status_id'
+        $showFoods = selectFcn( $table, 'fd.food_id,fd.vendor_id,fd.foodname,fd.price,fd.quantity,fd.image,us.firstname,us.lastname,ct.name AS food_category, st.name AS food_status' );
+        if ( $showFoods->num_rows > 0 ) {
+            while( $row = $showFoods->fetch_assoc() ) {
+                $food_id = $row["food_id"];
+                $vendor_id = $row["vendor_id"];
+                $foodname = $row["foodname"];
+                $price = $row["price"];
+                $quantity = $row["quantity"];
+                $image = $row["image"];
+                $firstname = $row["firstname"];
+                $lastname = $row["lastname"];
+                $food_category = $row["food_category"];
+                $food_status = $row["food_status"];
+                echo<<<_HTML
+                <tr>
+                <td>
+                <div class = 'd-flex px-2 py-1'>
+                <div>
+                <img src = "./images/foods/$image" class = 'avatar avatar-sm me-3 border-radius-lg' alt = '$foodname'>
                 </div>
-                <div class="form-wrap">
-                        <i class="fab fa-cutlery"></i>
-                        <input type="submit" value="Create food">
+                <div class = 'd-flex flex-column justify-content-center'>
+                <h6 class = 'mb-0 text-sm'>$foodname</h6>
+                <p class = 'text-xs text-secondary mb-0'>$price | qty: $quantity</p>
                 </div>
-         
-                </form>
-            </div>
-            <div class="order-right">
-
-            </div>
-        </div>
-    </section>
-    </main>
-    <?php require_once('./includes/footer.php');?>
- 
-    <script>
-        let catBtns = document.querySelectorAll('.category-btn');
-        let dishCards = document.querySelectorAll('.dish-card');
-        catBtns.forEach(function(catBtn){
-            catBtn.onclick = function(e){
-                for(let i of catBtns) i.className = 'category-btn';
-                this.classList.toggle("active");
-                let category = this.dataset.category;
-                for(let i of dishCards) {
-                    i.style.display = "block";
-                    i.className = "dish-card";
-                }
-                if(category != 'all') for(let i of dishCards) if(i.dataset.type != category){
-                    i.classList.toggle('hide');
-                    setTimeout(() => i.style.display = "none", 500);
-                }
+                </div>
+                </td>
+                <td>
+                <p class = 'text-xs font-weight-bold mb-0'>$food_category</p>
+                <p class = 'text-xs text-secondary mb-0'>Organization</p>
+                </td>
+                <td class = 'align-middle text-center text-sm'>
+                <span class = 'badge badge-sm bg-gradient-success'>$food_status</span>
+                </td>
+                <td class = 'align-middle text-center'>
+                <span class = 'text-secondary text-xs font-weight-bold'>$firstname $lastname</span>
+                </td>
+                <td class = 'align-middle'>
+                <a href = './foodupload.php?food=$food_id' class = 'text-secondary font-weight-bold text-xs' data-toggle = 'tooltip' data-original-title = 'Edit user'>
+                Edit
+                </a>
+                </td>
+                </tr>
+                _HTML;
             }
-        })
-        let navToggle = document.querySelector(".nav-toggle");
-            let navBar = document.querySelector(".nav-bar");
-            navToggle.onclick = ()=>{
-                navBar.classList.toggle("nav-active");
-            } 
+          }
+    ?>
+</tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+<?php
+     include_once( './includes/dashfoot.php' );
 
-    </script>
-</body>
-</html>
+?>

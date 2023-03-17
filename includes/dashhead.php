@@ -1,3 +1,7 @@
+<?php
+require_once("./config/db.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +35,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/dashboard.html">
+          <a class="nav-link text-white " href="./dashboard.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-dashboard"></i>
             </div>
@@ -39,7 +43,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/tables.html">
+          <a class="nav-link text-white " href="./orders.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-receipt"></i>
             </div>
@@ -47,7 +51,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/virtual-reality.html">
+          <a class="nav-link text-white " href="./food.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-cutlery"></i>
             </div>
@@ -55,7 +59,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/billing.html">
+          <a class="nav-link text-white " href="./profile.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-user"></i>
             </div>
@@ -63,15 +67,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/virtual-reality.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fa fa-cutlery"></i>
-            </div>
-            <span class="nav-link-text ms-1">Foods</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/rtl.html">
+          <a class="nav-link text-white " href="./users.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-users"></i>
             </div>
@@ -79,7 +75,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/notifications.html">
+          <a class="nav-link text-white " href="./pages/messages.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-bell"></i>
             </div>
