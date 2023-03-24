@@ -7,12 +7,13 @@ require_once("./includes/header.php");
 $foodname=$price=$quantity=$image=$category_id=$description="";
 $btnText = "Create Food";
 $headingText = "Create";
+$imageText = "Required";
 $triggerText = "CreateFood";
 $backgroundImage = "";
 if (isset($_GET['food'])) {
     $food_id = $_GET['food'];
     $user_id = $_SESSION['user_id'];
-    $findFood  = selectFcn("foods","foodname,price,quantity,description,category_id,image","WHERE food_id = ? AND vendor_id = ?","ii",$food_id,$user_id );
+    $findFood  = selectFcn("foods","food_id,vendor_id,foodname,price,quantity,description,category_id,image","WHERE food_id = ? AND vendor_id = ?","ii",$food_id,$user_id );
     if ($findFood->num_rows > 0) {
            $row = $findFood->fetch_assoc();
            $foodname = $row["foodname"];
@@ -23,6 +24,7 @@ if (isset($_GET['food'])) {
            $image = $row["image"];
            $btnText = "Update Food";
            $headingText = "Update";
+           $imageText = "";
            $triggerText = "updateFood";
            $backgroundImage = "style = 'background-image:url(\"./images/foods/$image\");'";
     }
@@ -54,7 +56,7 @@ if (isset($_GET['food'])) {
                     </div>
                                     <div class="form-wrap">
                                 <i class="fa fa-cutlery"></i>
-                   <input type="file" name="image" id="" value = "<?= $image?>" placeholder="quantity avaliable for sale" required >
+                   <input type="file" name="image" id="" value = "<?= $image?>"<?= $imageText?>>
                     </div>
                     <div class="form-wrap">
                             <i class="fa fa-cutlery"></i>

@@ -151,17 +151,17 @@ function insertFcn($table,$fields,$questions,$params,...$args){
     return $status;
 }
 
-function updateFcn($table, $statement, $condition = "", $params = "", $values = ""){
+function updateFcn($table, $statement, $condition = "", $params = "", ...$args){
     global $db;
     $stmt = $db->prepare("UPDATE $table SET $statement  $condition");
-    $condition != "" ? $stmt->bind_param("$params", $values) : "";
+    $condition != "" ? $stmt->bind_param("$params", ...$args) : "";
     $status = $stmt->execute();
     return $status;
 }
-function deleteFcn($table, $condition = "", $params = "", $values = ""){
+function deleteFcn($table, $condition = "", $params = "", ...$args){
     global $db;
     $stmt = $db->prepare("DELETE FROM $table  $condition");
-    $condition != "" ? $stmt->bind_param("$params", $values) : "";
+    $condition != "" ? $stmt->bind_param("$params", ...$args) : "";
     $status = $stmt->execute();
     return $status;
 }

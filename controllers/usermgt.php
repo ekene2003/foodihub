@@ -101,7 +101,7 @@
                $mail->sendMail();
                $db->autocommit(true);//Ending the Transaction
                if($res){
-                  $upload = move_uploaded_file($_FILES['image']['tmp_name'], "$folder/image/users/$username.$ext");
+                  $upload = move_uploaded_file($_FILES['image']['tmp_name'], "$folder/images/users/$username.$ext");
                   if(!$upload) $user_report .= "Image upload unsuccessful. ";
                   }
                   echo json_encode(['status' => true, 'title' => "Welcome  $fullname", 'comment' => "${image_report}Please, verify your email to continue.", 'icon' => 'success', 'btn' => 'btn btn-success'],true);         

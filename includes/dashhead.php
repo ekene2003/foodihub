@@ -1,5 +1,12 @@
-<?php
-require_once("./config/db.php");
+<?php require_once("./config/db.php"); 
+if (!isset($_SESSION["user_id"])) {
+  header("location: ./user.php");
+}
+$global_id = $_SESSION['user_id'];
+$global_fullname =ucwords($_SESSION['fullname']);
+$global_email = $_SESSION['email'];
+$global_image = $_SESSION['image'];
+$global_username =ucwords($_SESSION['username']);
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +34,8 @@ require_once("./config/db.php");
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
         aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href="#">
-        <img src="./assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold text-white">Foodihub Dashboard</span>
+        <img src="./images/users/<?=$global_image?>" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white"><?=$global_fullname?></span>
       </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
@@ -51,7 +58,7 @@ require_once("./config/db.php");
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./food.php">
+          <a class="nav-link text-white " href="./foods.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-cutlery"></i>
             </div>
@@ -75,11 +82,11 @@ require_once("./config/db.php");
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./pages/messages.php">
+          <a class="nav-link text-white " href="./messages.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-bell"></i>
             </div>
-            <span class="nav-link-text ms-1">Notifications</span>
+            <span class="nav-link-text ms-1">Messages</span>
           </a>
         </li>
     </ul>

@@ -22,6 +22,9 @@
     }
   </script>
   <script src="./assets/js/material-dashboard.min.js?v=3.0.4"></script>
+  <script src="./js/sweetalert.min.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/dash-script.js"></script>
 </body>
 </html>
 
