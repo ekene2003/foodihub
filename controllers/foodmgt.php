@@ -34,18 +34,20 @@ if(isset($_POST['createFood'])){
 }
 if(isset($_POST['updateFood'])){
     $foodname = $db->real_escape_string($_POST['foodname']);
+    $food_id = $db->real_escape_string($_POST['updateFood']);
     $price = $db->real_escape_string($_POST['price']);
     $quantity= $db->real_escape_string($_POST['quantity']);
     $category_id = $db->real_escape_string($_POST['category_id']);
     $description = $db->real_escape_string($_POST['description']);
+    $image = $db->real_escape_string($_POST['image']);
     $vendor_id = $_SESSION['user_id'];
-    $image =isset($_FILES['image'])? basename($_FILES['image']['name']) :$_POST['image'];
+    $image = $_FILES['image']['name'] != "" ? basename($_FILES['image']['name']) : $_POST['image'];
     $image = strtolower($image);
     $image = str_replace(" ",'_',$image);
     $ext = pathinfo($image, PATHINFO_EXTENSION);
     $valid_extension = ['jpg', 'jpeg', 'png'];
     if(in_array($ext, $valid_extension)){
-        $insertFood = insertFcn($table, "foodname,price,quantity,category_id,description,vendor_id,image","?,?,?,?,?,?,?","sssisis",$foodname,$price,$quantity,$category_id,$description,$vendor_id,$image);
+        $insertFood = updateFcn($table, "foodname='$foodname',price='$price',quantity='$quantity',category_id='$category_id',description='$description',vendor_id='$vendor_id',image='$image.$ext'","WHERE food_id = ?","i",$food_id);
         // $insertQuery = $db->prepare("INSERT INTO $table (foodname,price,quantity,category_id,description,vendor_id,image) VALUES (?,?,?,?,?,?,?)");
         // $insertQuery->bind_param("sssisis", $foodname,$price,$quantity,$category_id,$description,$vendor_id,$image);
         // $insertFood = $insertQuery->execute();

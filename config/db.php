@@ -1,4 +1,8 @@
 <?php
+//difference between session and cookie?
+  
+
+
 if (!session_id())
     session_start();
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
@@ -46,14 +50,11 @@ $create_users_table = "CREATE TABLE IF NOT EXISTS users (
     
 $create_vendors_table = "CREATE TABLE IF NOT EXISTS vendors (
     vendor_id INT(255) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    
     email VARCHAR(50) NOT NULL,
     vendorname VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL,
     image VARCHAR(50) NOT NULL,
-    
     status TINYINT(2) DEFAULT 1,
-    
     token VARCHAR(50) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -73,6 +74,8 @@ $create_foods_table = "CREATE TABLE IF NOT EXISTS foods (
     status TINYINT(2) DEFAULT 1,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    
+    
 ) CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci, ENGINE=InnoDB";
 $db->query($create_foods_table);
 
@@ -122,10 +125,6 @@ $create_category_table = "CREATE TABLE IF NOT EXISTS category (
     name VARCHAR(20) NOT NULL
 ) CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci, ENGINE=InnoDB";
 $db->query($create_category_table);
-
-
-
-
 // utility functions
 function selectFcn($table, $statement, $condition = "", $params ="", ...$args){
     global $db;
@@ -137,7 +136,7 @@ function selectFcn($table, $statement, $condition = "", $params ="", ...$args){
 }
 
 
-function insertFcn($table,$fields,$questions,$params,...$args){
+function insertFcn($table,$fields,$questions, $params = "", ...$args){
     global $db;
     // $values = implode($values, ",");
     $insertQuery = $db->prepare("INSERT INTO $table ($fields) VALUES ($questions)");
@@ -146,11 +145,12 @@ function insertFcn($table,$fields,$questions,$params,...$args){
     // $fieldValue = implode($values, ",");
     // echo gettype($fieldValue);
     // $fieldcount = array_fill(0,count($values),$fieldValue);
+    
     $insertQuery->bind_param($params, ...$args);
     $status = $insertQuery->execute();
     return $status;
+         
 }
-
 function updateFcn($table, $statement, $condition = "", $params = "", ...$args){
     global $db;
     $stmt = $db->prepare("UPDATE $table SET $statement  $condition");
