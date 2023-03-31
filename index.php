@@ -82,308 +82,46 @@ require_once("./includes/header.php");
                 <button class="category-btn" data-category="dessert">Dessert</button>
             </div>
             <div class="dish-wrap">
-                <aside class="dish-card" data-type="starter">
-                    <img src="./images/foods/download(2).jpg" alt="" class="dish-image">
+                <?php
+                 $foodQuery = "SELECT food_id,foodname,price,quantity,description,image, name AS category FROM foods JOIN category USING (category_id) WHERE foods.status = 2";
+                 $showFoods = $db->query($foodQuery);
+                 if ($showFoods->num_rows >0) {
+                    while ($row = $showFoods->fetch_assoc()) {
+                        $food_id  = $row['food_id'];
+                        $foodname  = $row['foodname'];
+                        $price  = $row['price'];
+                        $quantity  = $row['quantity'];
+                        $description  = $row['description'];
+                        $image  = $row['image'];
+                        $category  = $row['category'];
+                        echo<<<_HTML
+                                <aside class="dish-card" data-type="strtolower($category)">
+                    <img src="./images/foods/$image" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
                             <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>strtolower($category)</span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">$foodname</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-half-stroke"></i>
                             <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
+                            <span class="rating-total">$quantity</span>
                         </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
+                        <h4 class="dish-price"> &8358 $price</h4>
+                        <p class="dish-desc">$description</p>
                     </div>
                 </aside>
-                <aside class="dish-card" data-type="main">
-                    <img src="./images/foods/download(6).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="dessert">
-                    <img src="./images/foods/download(4).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="starter">
-                    <img src="./images/foods/download(3).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="dessert">
-                    <img src="./images/foods/download(2).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="starter">
-                    <img src="./images/foods/download(2).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="main">
-                    <img src="./images/foods/download(6).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="dessert">
-                    <img src="./images/foods/download(4).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="starter">
-                    <img src="./images/foods/download(3).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="dessert">
-                    <img src="./images/foods/download(2).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="starter">
-                    <img src="./images/foods/download(2).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="main">
-                    <img src="./images/foods/download(6).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="dessert">
-                    <img src="./images/foods/download(4).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="starter">
-                    <img src="./images/foods/download(3).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                <aside class="dish-card" data-type="dessert">
-                    <img src="./images/foods/download(2).jpg" alt="" class="dish-image">
-                    <div class="dish-info">
-                        <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
-                        </div>
-                        <h3 class="dish-title">Starter Pack</h3>
-                        <div class="dish-rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-stroke"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
-                        </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
-                    </div>
-                </aside>
-                
-            </div>
+_HTML;                        
+                    }
+                 }
+                 else{
+                    echo "<p>sorry, we have no foods yet</p>";
+                 }
+                ?>
     </section>
        
     <!-- ORDER SECTION -->
