@@ -9,8 +9,8 @@ require_once("./includes/nav.php");
     <!-- ORDER SECTION -->
     <section class="order-section" id="order"></section>
         <div class="section-heading">
-            <h4 class="section-title">Get Access to Order Food</h4>
-            <p class="section-subtitle">Allow us help you quell that nagging hunger in record time!</p>
+            <h4 class="section-title">Get Access to hairstyles</h4>
+            <p class="section-subtitle">Allow us to make your hair!</p>
         </div>
         <div class="order-wrap">
             <div class="order-left formContainer">

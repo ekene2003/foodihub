@@ -168,8 +168,8 @@ html{
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    background-position: center;
-    background-image: linear-gradient(#0005, #0005), url("../images/foods/download.jpg");
+    background-position:center;
+    background-image: url(../images/_\ 𝐟𝗼𝐥𝐥𝗼𝐰\ 𝗺𝐞\ @𝐬𝐮𝐩𝐞𝐫𝐭𝐫𝐚𝐩𝐬𝐭𝐚𝐫\ _.jpeg);
 
 }
 .slide-text{
@@ -458,7 +458,7 @@ html{
 .order-right{
     flex: 1;
     background-size: cover;
-    background-image: linear-gradient(#0007,#0007), url("../images/foods/download\(4\).jpg");
+    background-image: linear-gradient(#0007,#0007), url("../images/_\ 𝐟𝗼𝐥𝐥𝗼𝐰\ 𝗺𝐞\ @𝐬𝐮𝐩𝐞𝐫𝐭𝐫𝐚𝐩𝐬𝐭𝐚𝐫\ _.jpeg");
 }
 
 /* FOOTER STYLE */

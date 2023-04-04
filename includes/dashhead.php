@@ -62,7 +62,7 @@ $global_username =ucwords($_SESSION['username']);
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-cutlery"></i>
             </div>
-            <span class="nav-link-text ms-1">Foods</span>
+            <span class="nav-link-text ms-1">hairstyles</span>
           </a>
         </li>
         <li class="nav-item">

@@ -8,7 +8,7 @@ include_once( './includes/dashnav.php' );
 <div class = 'card my-4'>
 <div class = 'card-header p-0 position-relative mt-n4 mx-3 z-index-2'>
 <div class = 'bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3'>
-<h6 class = 'text-white text-capitalize ps-3'>Foods table</h6>
+<h6 class = 'text-white text-capitalize ps-3'>Hairstyle table</h6>
 </div>
 </div>
 <div class = 'card-body px-0 pb-2'>
@@ -16,7 +16,7 @@ include_once( './includes/dashnav.php' );
 <table class = 'table align-items-center mb-0'>
 <thead>
 <tr>
-<th class = 'text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Food Details</th>
+<th class = 'text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>style Details</th>
 <th class = 'text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2'>Order Details</th>
 <th class = 'text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Status</th>
 <th class = 'text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Vendor</th>

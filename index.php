@@ -9,10 +9,10 @@ require_once("./includes/header.php");
             <div class="slide-wrap">
                 <aside class="slide-card">
                     <div class="slide-card">
-                        <h4 class="slide-subtext">Welcome Hungry!</h4>
-                        <h2 class="slide-text">FoddiHub is the Place for your Cravings</h2>
+                        <h4 class="slide-subtext">Welcome!</h4>
+                        <h2 class="slide-text">mary saloon is the place for you</h2>
                         <p class="slide-subtext">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi dicta voluptatibus iste veritatis doloremque.</p>
-                        <a href="#menu" class="slide-cta"><i class="fa fa-search"></i> Find Food</a>
+                        <a href="#menu" class="slide-cta"><i class="fa fa-search"></i> Find style</a>
                     </div>
                     <!-- <div class="slide-right">
                         <div class="slide-icon">
@@ -26,42 +26,43 @@ require_once("./includes/header.php");
 
         <section class="menu-section">
             <div class="section-heading">
-                <h4 class="section-title">Our Menu</h4>
+                <h4 class="section-title">Our styles</h4>
                 <p class="section-subtitle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit nesciunt illo optio reiciendis consectetur distinctio!</p>
             </div>
-            <div class="menu-wrap">
+            <div class="menu-wrap"> 
                 <aside class="menu-card">
-                    <img src="./images/foods/download(2).jpg" alt="" class="menu-image">
+                    <img src="./images/_ 𝐟𝗼𝐥𝐥𝗼𝐰 𝗺𝐞 @𝐬𝐮𝐩𝐞𝐫𝐭𝐫𝐚𝐩𝐬𝐭𝐚𝐫 _.jpeg" alt="" class="menu-image">
                     <div class="menu-info">
                         <div class="menu-label">
                             <span>Food <i class="fa fa-chevron-right"></i></span>
                             <span>Starter </span>
                         </div>
-                        <h3 class="menu-title">Starter Pack</h3>
+                        <h3 class="menu-title">Local</h3>
                         <h4 class="menu-price">  $100 - $500</h4>
                         <p class="menu-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
                     </div>
                 </aside>
                 <aside class="menu-card">
-                    <img src="./images/foods/download(5).jpg" alt="" class="menu-image">
+                    <img src="./images/Homepage - Voice of Hair.jpeg" alt="" class="menu-image">
+        
                     <div class="menu-info">
                         <div class="menu-label">
                             <span>Food <i class="fa fa-chevron-right"></i></span>
                             <span>Min Course </span>
                         </div>
-                        <h3 class="menu-title">Main Course</h3>
+                        <h3 class="menu-title">Foreign</h3>
                         <h4 class="menu-price">  $1000 - $5000</h4>
                         <p class="menu-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
                     </div>
                 </aside>
                 <aside class="menu-card">
-                    <img src="./images/foods/images.jpg" alt="" class="menu-image">
+                    <img src="./images/download (1).jpeg" alt="" class="menu-image">
                     <div class="menu-info">
                         <div class="menu-label">
                             <span>Food <i class="fa fa-chevron-right"></i></span>
                             <span>Dessert </span>
                         </div>
-                        <h3 class="menu-title">Dessert Combo</h3>
+                        <h3 class="menu-title">Intercontinental</h3>
                         <h4 class="menu-price">  $50 - $100</h4>
                         <p class="menu-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
                     </div>
@@ -72,24 +73,24 @@ require_once("./includes/header.php");
         <!-- DISHES SECTION -->
         <section class="dish-section">
             <div class="section-heading">
-                <h4 class="section-title">Our Dishes</h4>
+                <h4 class="section-title">Our Hairstyles</h4>
                 <p class="section-subtitle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit nesciunt illo optio reiciendis consectetur distinctio!</p>
             </div>
             <div class="dish-category">
                 <button class="category-btn active" data-category="all">All</button>
-                <button class="category-btn" data-category="starter">Starter</button>
-                <button class="category-btn" data-category="main">Main Course</button>
-                <button class="category-btn" data-category="dessert">Dessert</button>
+                <button class="category-btn" data-category="starter">local</button>
+                <button class="category-btn" data-category="main">foreign</button>
+                <button class="category-btn" data-category="dessert">Intercontinental</button>
             </div>
             <div class="dish-wrap">
                 <aside class="dish-card" data-type="starter">
-                    <img src="./images/foods/download(2).jpg" alt="" class="dish-image">
+                    <img src="./images/_ 𝐟𝗼𝐥𝐥𝗼𝐰 𝗺𝐞 @𝐬𝐮𝐩𝐞𝐫𝐭𝐫𝐚𝐩𝐬𝐭𝐚𝐫 _.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">local</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -103,13 +104,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="main">
-                    <img src="./images/foods/download(6).jpg" alt="" class="dish-image">
+                    <img src="./images/download (1).jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">local</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -123,13 +124,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="dessert">
-                    <img src="./images/foods/download(4).jpg" alt="" class="dish-image">
+                    <img src="./images/Homepage - Voice of Hair.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">local</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -143,13 +144,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="starter">
-                    <img src="./images/foods/download(3).jpg" alt="" class="dish-image">
+                    <img src="./images/Homepage - Voice of Hair.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">local</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -163,13 +164,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="dessert">
-                    <img src="./images/foods/download(2).jpg" alt="" class="dish-image">
+                    <img src="./images/_ 𝐟𝗼𝐥𝐥𝗼𝐰 𝗺𝐞 @𝐬𝐮𝐩𝐞𝐫𝐭𝐫𝐚𝐩𝐬𝐭𝐚𝐫 _.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">foreign</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -183,13 +184,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="starter">
-                    <img src="./images/foods/download(2).jpg" alt="" class="dish-image">
+                    <img src="./images/_ 𝐟𝗼𝐥𝐥𝗼𝐰 𝗺𝐞 @𝐬𝐮𝐩𝐞𝐫𝐭𝐫𝐚𝐩𝐬𝐭𝐚𝐫 _.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">foreign</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -203,13 +204,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="main">
-                    <img src="./images/foods/download(6).jpg" alt="" class="dish-image">
+                    <img src="./images/download (1).jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">foreign</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -223,13 +224,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="dessert">
-                    <img src="./images/foods/download(4).jpg" alt="" class="dish-image">
+                    <img src="./images/Homepage - Voice of Hair.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">foreign</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -243,13 +244,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="starter">
-                    <img src="./images/foods/download(3).jpg" alt="" class="dish-image">
+                    <img src="./images/Homepage - Voice of Hair.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">foreign</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -263,13 +264,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="dessert">
-                    <img src="./images/foods/download(2).jpg" alt="" class="dish-image">
+                    <img src="./images/_ 𝐟𝗼𝐥𝐥𝗼𝐰 𝗺𝐞 @𝐬𝐮𝐩𝐞𝐫𝐭𝐫𝐚𝐩𝐬𝐭𝐚𝐫 _.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">intercontinental</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -283,13 +284,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="starter">
-                    <img src="./images/foods/download(2).jpg" alt="" class="dish-image">
+                    <img src="./images/_ 𝐟𝗼𝐥𝐥𝗼𝐰 𝗺𝐞 @𝐬𝐮𝐩𝐞𝐫𝐭𝐫𝐚𝐩𝐬𝐭𝐚𝐫 _.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">intercontinental</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -303,13 +304,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="main">
-                    <img src="./images/foods/download(6).jpg" alt="" class="dish-image">
+                    <img src="./images/download (1).jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">intercontinental</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -323,13 +324,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="dessert">
-                    <img src="./images/foods/download(4).jpg" alt="" class="dish-image">
+                    <img src="./images/Homepage - Voice of Hair.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">intercontinental</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -343,13 +344,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="starter">
-                    <img src="./images/foods/download(3).jpg" alt="" class="dish-image">
+                    <img src="./images/Homepage - Voice of Hair.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">intercontinental</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -363,13 +364,13 @@ require_once("./includes/header.php");
                     </div>
                 </aside>
                 <aside class="dish-card" data-type="dessert">
-                    <img src="./images/foods/download(2).jpg" alt="" class="dish-image">
+                    <img src="./images/_ 𝐟𝗼𝐥𝐥𝗼𝐰 𝗺𝐞 @𝐬𝐮𝐩𝐞𝐫𝐭𝐫𝐚𝐩𝐬𝐭𝐚𝐫 _.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
                         <div class="dish-label">
-                            <span>Food <i class="fa fa-chevron-right"></i></span>
-                            <span>Starter </span>
+                            <span>hair <i class="fa fa-chevron-right"></i></span>
+                            <span>Styles </span>
                         </div>
-                        <h3 class="dish-title">Starter Pack</h3>
+                        <h3 class="dish-title">intercontinental</h3>
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
