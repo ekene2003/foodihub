@@ -7,8 +7,14 @@ include_once( './includes/dashnav.php' );
 <div class = 'col-12'>
 <div class = 'card my-4'>
 <div class = 'card-header p-0 position-relative mt-n4 mx-3 z-index-2'>
+<<<<<<< HEAD
 <div class = 'bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3'>
 <h6 class = 'text-white text-capitalize ps-3'>Hairstyle table</h6>
+=======
+<div class = 'bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3 d-flex justify-content-between alighn-items-center'>
+<h6 class = 'text-white text-capitalize ps-3'>Foods table</h6>
+<a href="./foodupload.php" class="btn btn-dark text-sm me-4">Create Food</a>
+>>>>>>> afaa3fabbf1ad6168b9d58ce11cdde7354ae8cfc
 </div>
 </div>
 <div class = 'card-body px-0 pb-2'>

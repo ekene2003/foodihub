@@ -83,6 +83,7 @@ require_once("./includes/header.php");
                 <button class="category-btn" data-category="dessert">Intercontinental</button>
             </div>
             <div class="dish-wrap">
+<<<<<<< HEAD
                 <aside class="dish-card" data-type="starter">
                     <img src="./images/_ 𝐟𝗼𝐥𝐥𝗼𝐰 𝗺𝐞 @𝐬𝐮𝐩𝐞𝐫𝐭𝐫𝐚𝐩𝐬𝐭𝐚𝐫 _.jpeg" alt="" class="dish-image">
                     <div class="dish-info">
@@ -91,18 +92,42 @@ require_once("./includes/header.php");
                             <span>Styles </span>
                         </div>
                         <h3 class="dish-title">local</h3>
+=======
+                <?php
+                 $foodQuery = "SELECT food_id,foodname,price,quantity,description,image, name AS category FROM foods JOIN category USING (category_id) WHERE foods.status = 2";
+                 $showFoods = $db->query($foodQuery);
+                 if ($showFoods->num_rows >0) {
+                    while ($row = $showFoods->fetch_assoc()) {
+                        $food_id  = $row['food_id'];
+                        $foodname  = $row['foodname'];
+                        $price  = $row['price'];
+                        $quantity  = $row['quantity'];
+                        $description  = $row['description'];
+                        $image  = $row['image'];
+                        $category  = $row['category'];
+                        echo<<<_HTML
+                                <aside class="dish-card" data-type="strtolower($category)">
+                    <img src="./images/foods/$image" alt="" class="dish-image">
+                    <div class="dish-info">
+                        <div class="dish-label">
+                            <span>Food <i class="fa fa-chevron-right"></i></span>
+                            <span>strtolower($category)</span>
+                        </div>
+                        <h3 class="dish-title">$foodname</h3>
+>>>>>>> afaa3fabbf1ad6168b9d58ce11cdde7354ae8cfc
                         <div class="dish-rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-half-stroke"></i>
                             <i class="far fa-star"></i>
-                            <span class="rating-total">56</span>
+                            <span class="rating-total">$quantity</span>
                         </div>
-                        <h4 class="dish-price">  $100 - $500</h4>
-                        <p class="dish-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, necessitatibus.</p>
+                        <h4 class="dish-price"> &8358 $price</h4>
+                        <p class="dish-desc">$description</p>
                     </div>
                 </aside>
+<<<<<<< HEAD
                 <aside class="dish-card" data-type="main">
                     <img src="./images/download (1).jpeg" alt="" class="dish-image">
                     <div class="dish-info">
@@ -385,6 +410,15 @@ require_once("./includes/header.php");
                 </aside>
                 
             </div>
+=======
+_HTML;                        
+                    }
+                 }
+                 else{
+                    echo "<p>sorry, we have no foods yet</p>";
+                 }
+                ?>
+>>>>>>> afaa3fabbf1ad6168b9d58ce11cdde7354ae8cfc
     </section>
        
     <!-- ORDER SECTION -->
